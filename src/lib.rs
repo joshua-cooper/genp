@@ -5,14 +5,14 @@ Some character and word lists are exported by this crate to use when you don't w
 ## Password
 ```rust
 use genp::password;
-use genp::charlist::{LOWERCASE_CHARS, NUMBERS, UPPERCASE_CHARS};
+use genp::charlist::{LOWERCASE, NUMBERS, UPPERCASE};
 
 let len = 26;
 
 let mut charlist = Vec::new();
-charlist.extend_from_slice(&LOWERCASE_CHARS);
+charlist.extend_from_slice(&LOWERCASE);
 charlist.extend_from_slice(&NUMBERS);
-charlist.extend_from_slice(&UPPERCASE_CHARS);
+charlist.extend_from_slice(&UPPERCASE);
 
 println!("{}", password(&charlist, len));
 ```
