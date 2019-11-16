@@ -36,7 +36,7 @@ fn choose_from<T: Copy>(arr: &[T]) -> T {
 }
 
 /// Generate a password of length `len` from a character list.
-pub fn password(charlist: &[char], len: u8) -> String {
+pub fn password(charlist: &[char], len: u128) -> String {
     let mut password = String::new();
     for _ in 0..len {
         let character = choose_from(charlist);
@@ -46,7 +46,7 @@ pub fn password(charlist: &[char], len: u8) -> String {
 }
 
 /// Generate a passphrase of length `len` from a wordlist.
-pub fn diceware(wordlist: &[&str], len: u8) -> String {
+pub fn diceware(wordlist: &[&str], len: u128) -> String {
     let mut password = Vec::new();
     for _ in 0..len {
         password.push(choose_from(wordlist));
