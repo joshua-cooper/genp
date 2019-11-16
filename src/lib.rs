@@ -1,7 +1,8 @@
 /*!
 # genp
-This crate provides functions for generating passwords from a character list or passphrases from a word list (diceware).
+This crate provides functions for generating passwords from a character list or passphrases from a word list.
 Some character and word lists are exported by this crate to use when you don't want to supply your own.
+
 ## Password
 ```rust
 use genp::password;
@@ -19,12 +20,12 @@ println!("{}", password(&charlist, len));
 
 ## Passphrase
 ```rust
-use genp::diceware;
+use genp::passphrase;
 use genp::wordlist::ENGLISH;
 
 let len = 12;
 
-println!("{}", diceware(&ENGLISH, len));
+println!("{}", passphrase(&ENGLISH, len));
 ```
 */
 
@@ -46,7 +47,7 @@ pub fn password(charlist: &[char], len: u128) -> String {
 }
 
 /// Generate a passphrase of length `len` from a wordlist.
-pub fn diceware(wordlist: &[&str], len: u128) -> String {
+pub fn passphrase(wordlist: &[&str], len: u128) -> String {
     let mut password = Vec::new();
     for _ in 0..len {
         password.push(choose_from(wordlist));
