@@ -4,6 +4,7 @@ version = "0.3.0"
 authors = ["Joshua Cooper <joshua@cooper.cx>"]
 edition = "2018"
 license = "ISC"
+readme = "README.md"
 description = "A library for generating passwords and passphrases."
 keywords = ["password", "passphrase", "diceware", "generate"]
 repository = "https://github.com/joshua-cooper/genp"
